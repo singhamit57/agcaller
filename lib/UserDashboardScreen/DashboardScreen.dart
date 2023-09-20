@@ -41,24 +41,25 @@ class _DashboardScreenState extends State<DashboardScreen>
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             mainAxisSize: MainAxisSize.max,
             children: [
-              Padding(
-                padding: EdgeInsets.all(0),
-                child: IconButton(
-                    enableFeedback: false,
-                    onPressed: () {
-                      setState(() {
-                        pageIndex = 0;
-                      });
-                    },
-                    icon: pageIndex == 0
-                        ?
-                    Icon(Icons.home_filled, color: Colors.red, size: 25,)
-                        : Icon(
-                      Icons.home_outlined, color: Colors.red, size: 25,)
+              Container(
+                child: Padding(
+                  padding: EdgeInsets.all(0),
+                  child: IconButton(
+                      enableFeedback: false,
+                      onPressed: () {
+                        setState(() {
+                          pageIndex = 0;
+                        });
+                      },
+                      icon: pageIndex == 0
+                          ?
+                      Icon(Icons.home_filled, color: Colors.red, size: 25,)
+                          : Icon(
+                        Icons.home_outlined, color: Colors.red, size: 25,)
 
+                  ),
 
                 ),
-
               ),
               Padding(
                 padding: EdgeInsets.all(0),
