@@ -1,5 +1,11 @@
+import 'package:agcaller/UserMenuScreens/AdvancedReportScreens.dart';
+import 'package:agcaller/UserMenuScreens/CalenderScreens.dart';
+import 'package:agcaller/UserMenuScreens/RequestReportScreens.dart';
 import 'package:agcaller/constants/const_colors.dart';
 import 'package:flutter/material.dart';
+
+import '../../UserMenuScreens/CallLogScreens.dart';
+import '../../UserMenuScreens/FollowupsScreens.dart';
 class MenuScreen extends StatefulWidget
 {
   const MenuScreen({Key? key}) :super(key: key);
@@ -33,69 +39,42 @@ class _MenuScreenState extends State<MenuScreen>
                   Container(
                     width: 150,
                     height: 90,
-                    child: Card(
-                      elevation: 3,
-                      color: whiteColors,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Icon(Icons.notifications_active,color: Colors.greenAccent,),
-                          Text('Followups',style: TextStyle(color: Colors.black),),
-                        ],
+                    child: GestureDetector(
+                      onTap: (){
+                        Navigator.push(context,MaterialPageRoute(builder: (context) =>FollowupsScreens()));
+                      },
+                      child: Card(
+                        elevation: 3,
+                        color: whiteColors,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Icon(Icons.notifications_active,color: Colors.greenAccent,),
+                            Text('Followups',style: TextStyle(color: Colors.black),),
+                          ],
+                        ),
                       ),
                     ),
                   ),
                   Container(
                     height: 90,
                     width: 150,
-                    child: Card(
-                      elevation: 3,
-                      color: whiteColors,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Icon(Icons.calendar_month,color: Colors.green,),
-                          Text('Calendar',style: TextStyle(color: Colors.black),),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(top: 5),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-
-                children: [
-                  Container(
-                    width: 150,
-                    height: 90,
-                    child: Card(
-                      elevation: 3,
-                      color: whiteColors,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Icon(Icons.call,color: Colors.blue,),
-                          Text('Call logs',style: TextStyle(color: Colors.black),),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Container(
-                    height: 90,
-                    width: 150,
-                    child: Card(
-                      elevation: 3,
-                      color: whiteColors,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Icon(Icons.show_chart,color: Colors.red,),
-                          Text('Request Reports',style: TextStyle(color: Colors.black),),
-                        ],
+                    child: GestureDetector(
+                      onTap: (){
+                        setState(() {
+                          Navigator.push(context,MaterialPageRoute(builder: (context) =>CalenderScreens()));
+                        });
+                      },
+                      child: Card(
+                        elevation: 3,
+                        color: whiteColors,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Icon(Icons.calendar_month,color: Colors.green,),
+                            Text('Calendar',style: TextStyle(color: Colors.black),),
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -111,15 +90,69 @@ class _MenuScreenState extends State<MenuScreen>
                   Container(
                     width: 150,
                     height: 90,
-                    child: Card(
-                      elevation: 3,
-                      color: whiteColors,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Icon(Icons.bar_chart,color: Colors.red,),
-                          Text('Advanced Reports',style: TextStyle(color: Colors.black),),
-                        ],
+                    child: GestureDetector(
+                      onTap: (){
+                        Navigator.push(context,MaterialPageRoute(builder: (context) =>CallLogScreens()));
+                      },
+                      child: Card(
+                        elevation: 3,
+                        color: whiteColors,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Icon(Icons.call,color: Colors.blue,),
+                            Text('Call logs',style: TextStyle(color: Colors.black),),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    height: 90,
+                    width: 150,
+                    child: GestureDetector(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>RequestReportScreens()));
+                      },
+                      child: Card(
+                        elevation: 3,
+                        color: whiteColors,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Icon(Icons.show_chart,color: Colors.red,),
+                            Text('Request Reports',style: TextStyle(color: Colors.black),),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: 5),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
+                children: [
+                  Container(
+                    width: 150,
+                    height: 90,
+                    child: GestureDetector(
+                      onTap: (){
+                        Navigator.push(context,MaterialPageRoute(builder: (context)=>AdvancedReportScreens()));
+                      },
+                      child: Card(
+                        elevation: 3,
+                        color: whiteColors,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Icon(Icons.bar_chart,color: Colors.red,),
+                            Text('Advanced Reports',style: TextStyle(color: Colors.black),),
+                          ],
+                        ),
                       ),
                     ),
                   ),

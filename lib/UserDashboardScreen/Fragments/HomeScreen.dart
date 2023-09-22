@@ -1,13 +1,11 @@
-import 'package:agcaller/UserDashboardScreen/Fragments/AllocationScreen.dart';
-import 'package:agcaller/UserDashboardScreen/Fragments/CustomerScreen.dart';
-import 'package:agcaller/UserDashboardScreen/Fragments/LastSevenDayScreen.dart';
-import 'package:agcaller/UserDashboardScreen/Fragments/LastThirtyDayScreen.dart';
-import 'package:agcaller/UserDashboardScreen/Fragments/MenuScreen.dart';
-import 'package:agcaller/UserDashboardScreen/Fragments/SelectRangeScreen.dart';
-import 'package:agcaller/UserDashboardScreen/Fragments/TodayScreens.dart';
-import 'package:flutter/material.dart';
 
+import 'package:flutter/material.dart';
 import '../../constants/const_colors.dart';
+import 'LastSevenDayScreen.dart';
+import 'LastThirtyDayScreen.dart';
+import 'SelectRangeScreen.dart';
+import 'TodayScreens.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) :super(key: key);
 
@@ -70,7 +68,7 @@ class _HomeScreenState extends State<HomeScreen>
       ),
       body: SingleChildScrollView(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+         // crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
               height: 90,
@@ -175,38 +173,21 @@ class _HomeScreenState extends State<HomeScreen>
                           );
                         }),
                   ),
-                  Container(
-                    height: 500,
-                    width: 500,
-                    child: ggg[current],
-                  ),
 
-                  /// MAIN BODY
-                  // Container(
-                  //   margin: const EdgeInsets.only(top: 30),
-                  //   width: double.infinity,
-                  //   height: 550,
-                  //   child: Column(
-                  //     mainAxisAlignment: MainAxisAlignment.center,
-                  //     children: [
-                  //       Icon(
-                  //         icons[current],
-                  //         size: 200,
-                  //         color: Colors.deepPurple,
-                  //       ),
-                  //       const SizedBox(
-                  //         height: 10,
-                  //       ),
-                  //       Text(
-                  //         items[current],
-                  //         // style: GoogleFonts.laila(
-                  //         //     fontWeight: FontWeight.w500,
-                  //         //     fontSize: 30,
-                  //         //     color: Colors.deepPurple),
-                  //       ),
-                  //     ],
-                  //   ),
-                  // ),
+
+
+                   SingleChildScrollView(
+                      scrollDirection: Axis.vertical,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          ggg[current],
+                        ],
+                      ),
+                    ),
+
+
                 ],
               ),
             ),
@@ -219,3 +200,4 @@ class _HomeScreenState extends State<HomeScreen>
     );
   }
 }
+
