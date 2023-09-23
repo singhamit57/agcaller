@@ -1,5 +1,6 @@
 import 'package:agcaller/UserMenuScreens/AdvancedReportScreens.dart';
 import 'package:agcaller/UserMenuScreens/CalenderScreens.dart';
+import 'package:agcaller/UserMenuScreens/RechurnDataScreens.dart';
 import 'package:agcaller/UserMenuScreens/RequestReportScreens.dart';
 import 'package:agcaller/constants/const_colors.dart';
 import 'package:flutter/material.dart';
@@ -36,42 +37,153 @@ class _MenuScreenState extends State<MenuScreen>
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
 
                 children: [
-                  Container(
-                    width: 150,
-                    height: 90,
-                    child: GestureDetector(
-                      onTap: (){
-                        Navigator.push(context,MaterialPageRoute(builder: (context) =>FollowupsScreens()));
-                      },
-                      child: Card(
-                        elevation: 3,
-                        color: whiteColors,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Icon(Icons.notifications_active,color: Colors.greenAccent,),
-                            Text('Followups',style: TextStyle(color: Colors.black),),
-                          ],
+                  Expanded(
+                    flex:5,
+                    child: Container(
+                      width: 150,
+                      height: 90,
+                      child: GestureDetector(
+                        onTap: (){
+                          Navigator.push(context,MaterialPageRoute(builder: (context) =>FollowupsScreens()));
+                        },
+                        child: Card(
+                          elevation: 3,
+                          color: whiteColors,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Icon(Icons.notifications_active,color: Colors.greenAccent,),
+                              Text('Followups',style: TextStyle(color: Colors.black),),
+                            ],
+                          ),
                         ),
                       ),
                     ),
                   ),
-                  Container(
-                    height: 90,
-                    width: 150,
-                    child: GestureDetector(
-                      onTap: (){
-                        setState(() {
-                          Navigator.push(context,MaterialPageRoute(builder: (context) =>CalenderScreens()));
-                        });
-                      },
+                  Expanded(
+                    flex: 5,
+                    child: Container(
+                      height: 90,
+                      width: 150,
+                      child: GestureDetector(
+                        onTap: (){
+                          setState(() {
+                            Navigator.push(context,MaterialPageRoute(builder: (context) =>CalenderScreens()));
+                          });
+                        },
+                        child: Card(
+                          elevation: 3,
+                          color: whiteColors,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Icon(Icons.calendar_month,color: Colors.green,),
+                              Text('Calendar',style: TextStyle(color: Colors.black),),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: 5),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
+                children: [
+                  Expanded(
+                    flex:5,
+                    child: Container(
+                      width: 150,
+                      height: 90,
+                      child: GestureDetector(
+                        onTap: (){
+                          Navigator.push(context,MaterialPageRoute(builder: (context) =>CallLogScreens()));
+                        },
+                        child: Card(
+                          elevation: 3,
+                          color: whiteColors,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Icon(Icons.call,color: Colors.blue,),
+                              Text('Call logs',style: TextStyle(color: Colors.black),),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    flex: 5,
+                    child: Container(
+                      height: 90,
+                      width: 150,
+                      child: GestureDetector(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>RequestReportScreens()));
+                        },
+                        child: Card(
+                          elevation: 3,
+                          color: whiteColors,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Icon(Icons.show_chart,color: Colors.red,),
+                              Text('Request Reports',style: TextStyle(color: Colors.black),),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: 5),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
+                children: [
+                  Expanded(
+                    flex:5,
+                    child: Container(
+                      width: 150,
+                      height: 90,
+                      child: GestureDetector(
+                        onTap: (){
+                          Navigator.push(context,MaterialPageRoute(builder: (context)=>AdvancedReportScreens()));
+                        },
+                        child: Card(
+                          elevation: 3,
+                          color: whiteColors,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Icon(Icons.bar_chart,color: Colors.red,),
+                              Text('Advanced Reports',style: TextStyle(color: Colors.black),),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    flex: 5,
+                    child: Container(
+                      height: 90,
+                      width: 150,
                       child: Card(
                         elevation: 3,
                         color: whiteColors,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            Icon(Icons.calendar_month,color: Colors.green,),
+                            Icon(Icons.work_history_outlined,color: Colors.green,),
                             Text('Calendar',style: TextStyle(color: Colors.black),),
                           ],
                         ),
@@ -87,41 +199,37 @@ class _MenuScreenState extends State<MenuScreen>
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
 
                 children: [
-                  Container(
-                    width: 150,
-                    height: 90,
-                    child: GestureDetector(
-                      onTap: (){
-                        Navigator.push(context,MaterialPageRoute(builder: (context) =>CallLogScreens()));
-                      },
+                  Expanded(
+                    flex:5,
+                    child: Container(
+                      width: 150,
+                      height: 90,
                       child: Card(
                         elevation: 3,
                         color: whiteColors,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            Icon(Icons.call,color: Colors.blue,),
-                            Text('Call logs',style: TextStyle(color: Colors.black),),
+                            Icon(Icons.message,color: Colors.orangeAccent,),
+                            Text('SMS Templates',style: TextStyle(color: Colors.black),),
                           ],
                         ),
                       ),
                     ),
                   ),
-                  Container(
-                    height: 90,
-                    width: 150,
-                    child: GestureDetector(
-                      onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>RequestReportScreens()));
-                      },
+                  Expanded(
+                    flex: 5,
+                    child: Container(
+                      height: 90,
+                      width: 150,
                       child: Card(
                         elevation: 3,
                         color: whiteColors,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            Icon(Icons.show_chart,color: Colors.red,),
-                            Text('Request Reports',style: TextStyle(color: Colors.black),),
+                            Icon(Icons.mail,color: Colors.blue,),
+                            Text('Email Templates',style: TextStyle(color: Colors.black),),
                           ],
                         ),
                       ),
@@ -136,38 +244,44 @@ class _MenuScreenState extends State<MenuScreen>
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
 
                 children: [
-                  Container(
-                    width: 150,
-                    height: 90,
-                    child: GestureDetector(
-                      onTap: (){
-                        Navigator.push(context,MaterialPageRoute(builder: (context)=>AdvancedReportScreens()));
-                      },
+                  Expanded(
+                    flex:5,
+                    child: Container(
+                      width: 150,
+                      height: 90,
                       child: Card(
                         elevation: 3,
                         color: whiteColors,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            Icon(Icons.bar_chart,color: Colors.red,),
-                            Text('Advanced Reports',style: TextStyle(color: Colors.black),),
+                            Icon(Icons.repeat,color: Colors.blue,),
+                            Text('Rechurn Followups',style: TextStyle(color: Colors.black),),
                           ],
                         ),
                       ),
                     ),
                   ),
-                  Container(
-                    height: 90,
-                    width: 150,
-                    child: Card(
-                      elevation: 3,
-                      color: whiteColors,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Icon(Icons.work_history_outlined,color: Colors.green,),
-                          Text('Calendar',style: TextStyle(color: Colors.black),),
-                        ],
+                  Expanded(
+                    flex: 5,
+                    child: Container(
+                      height: 90,
+                      width: 150,
+                      child: GestureDetector(
+                        onTap: (){
+                          Navigator.push(context,MaterialPageRoute(builder: (context)=>RechurnDataScreens()));
+                        },
+                        child: Card(
+                          elevation: 3,
+                          color: whiteColors,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Icon(Icons.loop_outlined,color: Colors.orangeAccent,),
+                              Text('Rechurn Data',style: TextStyle(color: Colors.black),),
+                            ],
+                          ),
+                        ),
                       ),
                     ),
                   ),
@@ -180,113 +294,41 @@ class _MenuScreenState extends State<MenuScreen>
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
 
                 children: [
-                  Container(
-                    width: 150,
-                    height: 90,
-                    child: Card(
-                      elevation: 3,
-                      color: whiteColors,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Icon(Icons.message,color: Colors.orangeAccent,),
-                          Text('SMS Templates',style: TextStyle(color: Colors.black),),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Container(
-                    height: 90,
-                    width: 150,
-                    child: Card(
-                      elevation: 3,
-                      color: whiteColors,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Icon(Icons.mail,color: Colors.blue,),
-                          Text('Email Templates',style: TextStyle(color: Colors.black),),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(top: 5),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-
-                children: [
-                  Container(
-                    width: 150,
-                    height: 90,
-                    child: Card(
-                      elevation: 3,
-                      color: whiteColors,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Icon(Icons.repeat,color: Colors.blue,),
-                          Text('Rechurn Data',style: TextStyle(color: Colors.black),),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Container(
-                    height: 90,
-                    width: 150,
-                    child: Card(
-                      elevation: 3,
-                      color: whiteColors,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Icon(Icons.loop_outlined,color: Colors.orangeAccent,),
-                          Text('Calendar',style: TextStyle(color: Colors.black),),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(top: 5),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-
-                children: [
-                  Container(
-                    width: 150,
-                    height: 90,
-                    child: Card(
-                      elevation: 3,
-                      color: whiteColors,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Icon(Icons.people_alt,color: Colors.red,),
-                          Text('Interactions',style: TextStyle(color: Colors.black),),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Container(
-                    height: 90,
-                    width: 150,
-                    child: Visibility(
-                      visible: false,
+                  Expanded(
+                    flex:5,
+                    child: Container(
+                      width: 150,
+                      height: 90,
                       child: Card(
                         elevation: 3,
                         color: whiteColors,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            Icon(Icons.calendar_month,color: Colors.green,),
-                            Text('Calendar',style: TextStyle(color: Colors.black),),
+                            Icon(Icons.people_alt,color: Colors.red,),
+                            Text('Interactions',style: TextStyle(color: Colors.black),),
                           ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    flex: 5,
+                    child: Container(
+                      height: 90,
+                      width: 150,
+                      child: Visibility(
+                        visible: false,
+                        child: Card(
+                          elevation: 3,
+                          color: whiteColors,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Icon(Icons.calendar_month,color: Colors.green,),
+                              Text('Calendar',style: TextStyle(color: Colors.black),),
+                            ],
+                          ),
                         ),
                       ),
                     ),
