@@ -14,6 +14,16 @@ class _CalenderScreensState extends State<CalenderScreens>
   {
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          GestureDetector(
+            onTap: (){
+              setState(() {
+                showModalBottomSheet(context: context,builder: (context)=>buildSheet());
+              });
+            },
+              child: Icon(Icons.menu_open,color: whiteColors,)),
+          SizedBox(width: 10,)
+        ],
         backgroundColor: logoColors,
         title: Text("Your Calender"),
       ),
@@ -30,4 +40,30 @@ class _CalenderScreensState extends State<CalenderScreens>
 
     );
   }
+
+  buildSheet()=>Column(
+    children: [
+      Padding(
+        padding: EdgeInsets.all(15),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text("Filters",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w500),),
+            Text("Done",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w500,color: logoColors),),
+          ],
+        ),
+      ),
+
+      SizedBox(height: 75,),
+      Container(
+        alignment: Alignment.topLeft,
+        margin: EdgeInsets.only(left: 15),
+        child: Text("Filter by Status",style: TextStyle(fontSize: 12,fontWeight: FontWeight.w200),),
+      ),
+
+    ],
+  );
+
+
+
 }
