@@ -1,5 +1,7 @@
 import 'package:agcaller/UserMenuScreens/AdvancedReportScreens.dart';
 import 'package:agcaller/UserMenuScreens/CalenderScreens.dart';
+import 'package:agcaller/UserMenuScreens/CallTrackAssistScreen.dart';
+import 'package:agcaller/UserMenuScreens/ChangePswdScreen.dart';
 import 'package:agcaller/UserMenuScreens/RechurnDataScreens.dart';
 import 'package:agcaller/UserMenuScreens/RequestReportScreens.dart';
 import 'package:agcaller/constants/const_colors.dart';
@@ -7,6 +9,7 @@ import 'package:flutter/material.dart';
 
 import '../../UserMenuScreens/CallLogScreens.dart';
 import '../../UserMenuScreens/FollowupsScreens.dart';
+import '../../UserMenuScreens/SettingScreen.dart';
 class MenuScreen extends StatefulWidget
 {
   const MenuScreen({Key? key}) :super(key: key);
@@ -345,7 +348,7 @@ class _MenuScreenState extends State<MenuScreen>
               ),
             ),
             Container(
-              margin: EdgeInsets.only(top: 5,left: 25),
+              margin: EdgeInsets.only(top: 0,left: 25),
 
               child: Row(
                 children: [
@@ -372,7 +375,7 @@ class _MenuScreenState extends State<MenuScreen>
 
 
             Container(
-              margin: EdgeInsets.only(top: 3),
+              margin: EdgeInsets.only(top: 0),
               child: Divider(
                 color: Color(0xffe3e3e3),
                 thickness: 0.5,
@@ -381,27 +384,40 @@ class _MenuScreenState extends State<MenuScreen>
             ),
 
             Container(
-              margin: EdgeInsets.only(top: 5,left: 25),
+              width: double.infinity,
+              margin: EdgeInsets.only(top: 0,left: 25),
 
-              child: Row(
-                children: [
-                  Icon(Icons.settings_suggest,color: logoColors,size: 16,),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text(
-                    'Call Track Assist',
-                      style: TextStyle(fontSize: 12,color: Colors.black,fontWeight: FontWeight.w300),
-                  ),
+              child: GestureDetector(
+                onTap: (){
+                 Navigator.push(context,MaterialPageRoute(builder: (context)=>CallTrackAssistScreen()));
+                },
+                child: Card(
+                  color: backgroundsColors,
+                  elevation: 0.0,
+                  child: Padding(
+                    padding: EdgeInsets.only(top: 0,bottom: 0),
+                    child: Row(
+                      children: [
+                        Icon(Icons.settings_suggest,color: logoColors,size: 16,),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          'Call Track Assist',
+                            style: TextStyle(fontSize: 12,color: Colors.black,fontWeight: FontWeight.w300),
+                        ),
 
-                ],
+                      ],
+                    ),
+                  ),
+                ),
               ),
 
             ),
 
 
             Container(
-              margin: EdgeInsets.only(top: 3),
+              margin: EdgeInsets.only(top: 0),
               child: Divider(
                 color: Color(0xffe3e3e3),
                 thickness: 0.5,
@@ -416,20 +432,29 @@ class _MenuScreenState extends State<MenuScreen>
               ),
             ),
             Container(
+              width: double.infinity,
               margin: EdgeInsets.only(top: 5,left: 25),
+              child: GestureDetector(
+                onTap: (){
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>SettingScreen()));
+                },
+                child: Card(
+                  elevation: 0.0,
+                  color: backgroundsColors,
+                  child: Row(
+                    children: [
+                      Icon(Icons.settings,color: logoColors,size: 16,),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        'Settings',
+                        style: TextStyle(fontSize: 12,color: Colors.black,fontWeight: FontWeight.w300),
+                      ),
 
-              child: Row(
-                children: [
-                  Icon(Icons.settings,color: logoColors,size: 16,),
-                  SizedBox(
-                    width: 10,
+                    ],
                   ),
-                  Text(
-                    'Settings',
-                    style: TextStyle(fontSize: 12,color: Colors.black,fontWeight: FontWeight.w300),
-                  ),
-
-                ],
+                ),
               ),
 
             ),
@@ -447,18 +472,27 @@ class _MenuScreenState extends State<MenuScreen>
             Container(
               margin: EdgeInsets.only(top: 5,left: 25),
 
-              child: Row(
-                children: [
-                  Icon(Icons.key,color: logoColors,size: 16,),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text(
-                    'Change Password',
-                    style: TextStyle(fontSize: 12,color: Colors.black,fontWeight: FontWeight.w300),
-                  ),
+              child: GestureDetector(
+                onTap: (){
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>ChangePswdScreen()));
+                },
+                child: Card(
+                  elevation: 0.0,
+                  color: backgroundsColors,
+                  child: Row(
+                    children: [
+                      Icon(Icons.key,color: logoColors,size: 16,),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        'Change Password',
+                        style: TextStyle(fontSize: 12,color: Colors.black,fontWeight: FontWeight.w300),
+                      ),
 
-                ],
+                    ],
+                  ),
+                ),
               ),
 
             ),
