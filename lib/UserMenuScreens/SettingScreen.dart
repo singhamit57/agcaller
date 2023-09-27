@@ -1,3 +1,4 @@
+import 'package:agcaller/UserMenuScreens/CalendarSettingScreen.dart';
 import 'package:agcaller/constants/const_colors.dart';
 import 'package:flutter/material.dart';
 
@@ -25,28 +26,34 @@ class _SettingScreenState extends State<SettingScreen> {
       body: Column(
         children: [
           Container(
-            child: Card(
-              elevation: 0.0,
-              color: backgroundsColors,
-              child: Padding(
-                padding: EdgeInsets.all(10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.calendar_today,
-                          color: logoColors,
-                        ),
-                        SizedBox(
-                          width: 15,
-                        ),
-                        Text("Calender"),
-                      ],
-                    ),
-                    Icon(Icons.navigate_next),
-                  ],
+            child: GestureDetector(
+              onTap: ()
+              {
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>CalendarSettingScreen()));
+              },
+              child: Card(
+                elevation: 0.0,
+                color: backgroundsColors,
+                child: Padding(
+                  padding: EdgeInsets.all(10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.calendar_today,
+                            color: logoColors,
+                          ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          Text("Calender"),
+                        ],
+                      ),
+                      Icon(Icons.navigate_next),
+                    ],
+                  ),
                 ),
               ),
             ),

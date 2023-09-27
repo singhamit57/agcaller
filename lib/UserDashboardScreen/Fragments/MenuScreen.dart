@@ -2,6 +2,8 @@ import 'package:agcaller/UserMenuScreens/AdvancedReportScreens.dart';
 import 'package:agcaller/UserMenuScreens/CalenderScreens.dart';
 import 'package:agcaller/UserMenuScreens/CallTrackAssistScreen.dart';
 import 'package:agcaller/UserMenuScreens/ChangePswdScreen.dart';
+import 'package:agcaller/UserMenuScreens/ContactSupportScreen.dart';
+import 'package:agcaller/UserMenuScreens/InteractionsScreen.dart';
 import 'package:agcaller/UserMenuScreens/RechurnDataScreens.dart';
 import 'package:agcaller/UserMenuScreens/RequestReportScreens.dart';
 import 'package:agcaller/constants/const_colors.dart';
@@ -187,7 +189,7 @@ class _MenuScreenState extends State<MenuScreen>
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             Icon(Icons.work_history_outlined,color: Colors.green,),
-                            Text('Calendar',style: TextStyle(color: Colors.black),),
+                            Text('Whatsapp Templates',style: TextStyle(color: Colors.black),),
                           ],
                         ),
                       ),
@@ -302,15 +304,20 @@ class _MenuScreenState extends State<MenuScreen>
                     child: Container(
                       width: 150,
                       height: 90,
-                      child: Card(
-                        elevation: 3,
-                        color: whiteColors,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Icon(Icons.people_alt,color: Colors.red,),
-                            Text('Interactions',style: TextStyle(color: Colors.black),),
-                          ],
+                      child: GestureDetector(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>InteractionsScreen()));
+                        },
+                        child: Card(
+                          elevation: 3,
+                          color: whiteColors,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Icon(Icons.people_alt,color: Colors.red,),
+                              Text('Interactions',style: TextStyle(color: Colors.black),),
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -509,18 +516,27 @@ class _MenuScreenState extends State<MenuScreen>
             Container(
               margin: EdgeInsets.only(top: 5,left: 25),
 
-              child: Row(
-                children: [
-                  Icon(Icons.support_agent,color: logoColors,size: 16,),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text(
-                    'Contact Support',
-                    style: TextStyle(fontSize: 12,color: Colors.black,fontWeight: FontWeight.w300),
-                  ),
+              child: GestureDetector(
+                onTap: (){
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>ContactSupportScreen()));
+                },
+                child: Card(
+                  elevation: 0.0,
+                  color: backgroundsColors,
+                  child: Row(
+                    children: [
+                      Icon(Icons.support_agent,color: logoColors,size: 16,),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        'Contact Support',
+                        style: TextStyle(fontSize: 12,color: Colors.black,fontWeight: FontWeight.w300),
+                      ),
 
-                ],
+                    ],
+                  ),
+                ),
               ),
 
             ),

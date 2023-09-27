@@ -1,3 +1,4 @@
+import 'package:agcaller/DialerPadScreens/DialerScreen.dart';
 import 'package:agcaller/UserDashboardScreen/Fragments/AllocationScreen.dart';
 import 'package:agcaller/UserDashboardScreen/Fragments/CustomerScreen.dart';
 import 'package:agcaller/UserDashboardScreen/Fragments/HomeScreen.dart';
@@ -116,7 +117,9 @@ class _DashboardScreenState extends State<DashboardScreen>
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: FloatingActionButton(
-          onPressed: () {},
+          onPressed: () {
+           Navigator.push(context,MaterialPageRoute(builder: (context)=>DialerScreen()));
+          },
           child: Icon(Icons.call),
           backgroundColor: logoColors,
           foregroundColor: whiteColors,
