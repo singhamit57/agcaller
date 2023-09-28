@@ -26,7 +26,7 @@ class _HomeScreenState extends State<HomeScreen>
     // "Profile",
   ];
 
-  /// List of body icon
+  /// List of body class
   final ggg = [
    TodayScreens(),
     LastSevenDayScreen(),
@@ -101,11 +101,20 @@ class _HomeScreenState extends State<HomeScreen>
                       ),
                     ),
                     Row(
-                      children: [Icon(Icons.coffee,color: whiteColors,),
+                      children: [
+                        GestureDetector(
+                          onTap: (){
+                            showModalBottomSheet(context: context, builder: (context)=>buildSheet());
+                          },
+                            child: Icon(Icons.coffee,color: whiteColors,)),
                         SizedBox(
                           width: 30,
                         ),
-                        Icon(Icons.power_settings_new_rounded,color: Colors.white,)
+                        GestureDetector(
+                          onTap: (){
+                            showModalBottomSheet(context: context, builder: (context)=>buildPowerIconSheet());
+                          },
+                            child: Icon(Icons.power_settings_new_rounded,color: Colors.white,))
                       ],
                     ),
 
@@ -199,5 +208,85 @@ class _HomeScreenState extends State<HomeScreen>
 
     );
   }
+
+  buildSheet()=>Container(
+    height: 175,
+      child: Column(
+        children: <Widget>[
+          SizedBox(height: 10,),
+          Icon(Icons.coffee,color: logoColors,),
+          SizedBox(height: 15,),
+          Container(
+            alignment: Alignment.topLeft,
+              margin: EdgeInsets.only(left: 20),
+              child: Text("Do you want to Start the\nbreak?",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w500),)),
+          Container(
+            margin: EdgeInsets.only(top: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                ElevatedButton(
+                  child: Padding(
+                    padding: EdgeInsets.all(15),
+                      child: const Text('No',style: TextStyle(color: logoColors),)),
+                  onPressed: () => Navigator.pop(context),
+                  style: ElevatedButton.styleFrom(backgroundColor: whiteColors,shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20)))),
+
+                ),
+                ElevatedButton(
+                  child:  Padding(
+                    padding: EdgeInsets.all(15),
+                      child: Text('Yes',style: TextStyle(color: whiteColors),)),
+                  style: ElevatedButton.styleFrom(backgroundColor: logoColors,shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20)))),
+                  onPressed: () => Navigator.pop(context),
+                ),
+              ],
+            ),
+          ),
+
+        ],
+      ),
+
+  );
+
+  buildPowerIconSheet()=>Container(
+    height: 175,
+    child: Column(
+      children: <Widget>[
+        SizedBox(height: 10,),
+        Icon(Icons.power_settings_new_rounded,color: logoColors,),
+        SizedBox(height: 15,),
+        Container(
+            alignment: Alignment.topLeft,
+            margin: EdgeInsets.only(left: 20),
+            child: Text("Do you really want to\nCheckout?",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w500),)),
+        Container(
+          margin: EdgeInsets.only(top: 20),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              ElevatedButton(
+                child: Padding(
+                    padding: EdgeInsets.all(15),
+                    child: const Text('No',style: TextStyle(color: logoColors),)),
+                onPressed: () => Navigator.pop(context),
+                style: ElevatedButton.styleFrom(backgroundColor: whiteColors,shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20)))),
+
+              ),
+              ElevatedButton(
+                child:  Padding(
+                    padding: EdgeInsets.all(15),
+                    child: Text('Yes',style: TextStyle(color: whiteColors),)),
+                style: ElevatedButton.styleFrom(backgroundColor: logoColors,shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20)))),
+                onPressed: () => Navigator.pop(context),
+              ),
+            ],
+          ),
+        ),
+
+      ],
+    ),
+
+  );
 }
 
