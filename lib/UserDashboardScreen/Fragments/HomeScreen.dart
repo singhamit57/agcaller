@@ -1,4 +1,5 @@
 
+import 'package:agcaller/AdminDashboardScreens/AdminDashboardScreen.dart';
 import 'package:flutter/material.dart';
 import '../../constants/const_colors.dart';
 import 'LastSevenDayScreen.dart';
@@ -47,6 +48,7 @@ class _HomeScreenState extends State<HomeScreen>
         elevation: 0.0,
         backgroundColor: logoColors,
         title: Text('agcaller'),
+        automaticallyImplyLeading: false,
         actions: [
           Container(
             height: 2,
@@ -58,7 +60,11 @@ class _HomeScreenState extends State<HomeScreen>
                 children: [
                   Padding(
                     padding: EdgeInsets.only(left: 5,right: 5),
-                      child: Text('Switch to admin',style: TextStyle(fontSize: 10,color: Colors.white),)
+                      child: GestureDetector(
+                        onTap: (){
+                         Navigator.push(context,MaterialPageRoute(builder: (context)=>AdminDashboardScreen()));
+                        },
+                          child: Text('Switch to admin',style: TextStyle(fontSize: 10,color: Colors.white),))
                   )
                 ],
               ),
